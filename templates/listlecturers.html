@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head %}
+	<title>List of Lecturers</title>
+{% endblock %}
+
+{% block body %}
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100">
+                <table>
+                    <thead>
+                        <tr class="table100-head">
+                            <th class="column1">Lecturer Email Id</th>
+                            <th class="column2">Password</th>
+                            <!-- <th class="column3">Update</th> -->
+                            <th class="column3">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        {% for row in lecturers %}
+                        <tr>
+                            <td class="column1">{{ row[0] }}</td>
+                            <td class="column2">{{ row[1] }}</td>
+                            <!-- <td class="column3"><a href="/update/{{row[0]}}">Update</a></td> -->
+                            <td class="column3"><a href="/delete/{{row[0]}}">Delete</a></td>
+                        </tr>
+        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <form class="login100-form validate-form" action="/registerlecturer" method="post">
+            <button class="login100-form-btn">
+                Back
+            </button>
+        </form>
+    </div>
+
+</div>
+{% endblock %}
+

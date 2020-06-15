@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block head %}
+	<title>Lecturer Site</title>
+{% endblock %}
+
+{% block body %}
+	
+	<div class="limiter">
+		<div class="container-login100" >
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54 m-r-50">
+					<span class="login100-form-title p-b-49">
+						Welcome {{ name }}
+					</span>
+	
+					<div class="container-login100-form-btn m-b-10">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<form action="/takeattendance" method="post">
+							<button class="login100-form-btn">
+								Take Attendance
+							</button>
+							</form>
+						</div>
+					</div>
+
+					<div class="container-login100-form-btn m-b-10">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<form action="/viewreport" method="post">
+							<button class="login100-form-btn">
+								View Attendance Report
+							</button>
+							</form>
+						</div>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<form action="/logout" method="post">
+							<button class="login100-form-btn" name="logout">
+								Logout
+							</button>
+							</form>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+	
+{% endblock %}
